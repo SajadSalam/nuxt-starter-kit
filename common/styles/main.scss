@@ -1,0 +1,111 @@
+.vdr-none {
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.nui-input-wrapper.nui-input-default .nui-input,
+.dp__input,
+.nui-autocomplete-input,
+.nui-textarea,
+.flatpickr-input {
+    background: #F9FAFB !important;
+    color: #424B60 !important;
+    border: 1px solid #F1F3F9 !important;
+    border-radius: 12px !important;
+
+    &::placeholder {
+        color: #96A0B6 !important;
+        font-size: 16px !important;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Light gray background */
+    border-radius: 10px;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    // background-color: #f1f1f1; /* Gray thumb */
+    border-radius: 10px;
+    border: 3px solid #767676;
+    /* Space around the thumb */
+}
+
+/* Style the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Style the scrollbar corner */
+::-webkit-scrollbar-corner {
+    background-color: #f1f1f1;
+}
+
+.nui-breadcrumb-item {
+    a {
+        text-align: center;
+        color: #444750 !important;
+        font-size: 16px !important;
+
+        &.router-link-active {
+            color: #a9321e !important;
+            font-weight: 700;
+        }
+    }
+}
+
+.nui-dropdown {
+    .nui-button.nui-button-solid.nui-button-default {
+        background: rgba(#A2A2A2, 10%);
+        border: 0;
+        ;
+        width: 62px !important;
+        font-size: 12px;
+
+    }
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(180deg, #A01E11 0%, #750D02 100%) !important;
+    transition: all 0.7s ease;
+
+    &:hover {
+        background: linear-gradient(0deg, #A01E11 0%, #750D02 100%) !important;
+    }
+}
+
+
+
+
+.chip {
+    width: fit-content;
+    height: fit-content;
+    font-weight: 700;
+    text-transform: capitalize;
+    @apply px-5 py-1 rounded-3xl;
+
+    &.current-chip {
+        color: #0BCB14;
+        background: #FFF;
+        box-shadow: 0px 2px 1px 0px rgba(87, 87, 87, 0.19);
+    }
+
+    &.previous-chip {
+        background: rgba(162, 162, 162, 0.10);
+        color: #6C757D;
+    }
+}
