@@ -70,7 +70,7 @@ async function main() {
   console.log()
 
   // Copy template, skip heavy/generated dirs
-  const SKIP = new Set(['node_modules', '.nuxt', '.output', 'bin'])
+  const SKIP = new Set(['node_modules', '.nuxt', '.output', '.git', '.github', '.claude', '.vscode', 'bin'])
   const srcRoot = path.resolve(__dirname, '..')
   fs.cpSync(srcRoot, targetDir, {
     recursive: true,

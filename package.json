@@ -66,7 +66,27 @@
   },
   "files": [
     "bin",
-    "template"
+    "app.config.ts",
+    "app.vue",
+    "eslint.config.ts",
+    "nuxt.config.ts",
+    "tailwind.config.ts",
+    "theme.config.ts",
+    "tsconfig.json",
+    "module.d.ts",
+    "pnpm-workspace.yaml",
+    "assets",
+    "common",
+    "features",
+    "middleware",
+    "navigation",
+    "public",
+    "server",
+    ".editorconfig",
+    ".env.example",
+    ".eslintignore",
+    ".npmrc",
+    ".prettierrc"
   ],
   "keywords": [
     "starter",
