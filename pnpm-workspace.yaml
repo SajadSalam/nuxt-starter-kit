@@ -1,2 +1,3 @@
 packages:
-  - common/layers/*
+  - template
+  - template/common/layers/*

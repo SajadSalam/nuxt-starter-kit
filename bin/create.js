@@ -69,17 +69,15 @@ async function main() {
   console.log(clr('dim', '  Scaffolding project...'))
   console.log()
 
-  // Copy template, skip heavy/generated dirs
-  const SKIP = new Set(['node_modules', '.nuxt', '.output', '.git', '.github', '.claude', '.vscode', 'bin'])
-  const srcRoot = path.resolve(__dirname, '..')
-  fs.cpSync(srcRoot, targetDir, {
-    recursive: true,
-    filter: src => {
-      if (src === srcRoot) return true
-      const rel = path.relative(srcRoot, src)
-      return !SKIP.has(rel.split(/[\\/]/)[0])
-    },
-  })
+  // Copy template
+  const srcRoot = path.resolve(__dirname, '../template')
+  fs.cpSync(srcRoot, targetDir, { recursive: true })
+
+  // Rename gitignore → .gitignore (npm strips leading dots on publish)
+  const gitignoreSrc = path.join(targetDir, 'gitignore')
+  if (fs.existsSync(gitignoreSrc)) {
+    fs.renameSync(gitignoreSrc, path.join(targetDir, '.gitignore'))
+  }
 
   // Patch package.json name
   const pkgPath = path.join(targetDir, 'package.json')
