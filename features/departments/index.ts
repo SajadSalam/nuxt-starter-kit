@@ -4,31 +4,31 @@ export const tableHeader = () => {
   return [
     {
       key: 'name',
-      label: 'اسم القسم',
+      label: 'Department Name',
     },
     {
       key: 'code',
-      label: 'رمز القسم',
+      label: 'Department Code',
     },
     {
       key: 'manager',
-      label: 'المدير',
+      label: 'Manager',
     },
     {
       key: 'parentDepartment',
-      label: 'القسم الأب',
+      label: 'Parent Department',
     },
     {
       key: 'budget',
-      label: 'الميزانية',
+      label: 'Budget',
     },
     {
       key: 'location',
-      label: 'الموقع',
+      label: 'Location',
     },
     {
       key: 'actions',
-      label: 'الإجراءات',
+      label: 'Actions',
     },
   ]
 }

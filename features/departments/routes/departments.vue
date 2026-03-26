@@ -9,8 +9,8 @@ import { useDepartmentStore } from '~/features/departments/store'
 import type { DepartmentFilters } from '~/features/departments/types'
 
 definePageMeta({
-    title: 'الأقسام',
-    description: 'إنشاء وإدارة الأقسام',
+    title: 'Departments',
+    description: 'Creating and managing departments',
 })
 
 const departmentStore = useDepartmentStore()
@@ -54,32 +54,32 @@ onUnmounted(() => {
 <template>
     <div>
         <AppCrud
-            add-button-text="إضافة قسم جديد"
+            add-button-text="Add New Department"
             :add-btn-action="() => (departmentStore.isCreateDialogOpen = true)"
             :pagination="true"
             :total-pages="departmentStore.totalPages"
-            title="الأقسام"
+            title="Departments"
             @update:current-page="filters.pageNumber = $event"
         >
             <template #filters>
-                <BaseInput v-model="filters.name" placeholder="البحث" />
+                <AppInputField v-model="filters.name" placeholder="Search" />
                 <AppAutoCompleteField
                     v-model="filters.parentDepartmentId"
-                    placeholder="القسم الأب"
+                    placeholder="Parent Department"
                     get-url="/Department"
                     item-label="name"
                     item-value="id"
                 />
                 <AppAutoCompleteField
                     v-model="filters.managerId"
-                    placeholder="المدير"
+                    placeholder="Manager"
                     get-url="/user"
                     item-label="fullName"
                     item-value="id"
                 />
             </template>
             <AppTable
-                title="الأقسام"
+                title="Departments"
                 :headers="tableHeader()"
                 :items="departments"
                 :is-loading="isLoading"
@@ -117,7 +117,7 @@ onUnmounted(() => {
                             {{ item.manager.email }}
                         </span>
                     </div>
-                    <span v-else class="text-muted-400">لا يوجد مدير</span>
+                    <span v-else class="text-muted-400">No Manager</span>
                 </template>
 
                 <template #data-parentDepartment="{ item }">
@@ -127,7 +127,7 @@ onUnmounted(() => {
                     >
                         {{ item.parentDepartment.name }}
                     </span>
-                    <span v-else class="text-muted-400">المستوى الأعلى</span>
+                    <span v-else class="text-muted-400">Top Level</span>
                 </template>
 
                 <template #data-budget="{ item }">
@@ -137,7 +137,7 @@ onUnmounted(() => {
                     >
                         ${{ item.budget.toLocaleString() }}
                     </span>
-                    <span v-else class="text-muted-400">لا توجد ميزانية</span>
+                    <span v-else class="text-muted-400">No Budget</span>
                 </template>
 
                 <template #data-location="{ item }">
@@ -147,7 +147,7 @@ onUnmounted(() => {
                     >
                         {{ item.location }}
                     </span>
-                    <span v-else class="text-muted-400">لا يوجد موقع</span>
+                    <span v-else class="text-muted-400">No Location</span>
                 </template>
 
                 <template #data-actions="{ item }">
@@ -160,7 +160,7 @@ onUnmounted(() => {
                                 departmentStore.isEditDialogOpen = true
                             }
                         "
-                        :delete-service="departmentStore.deleteDepartment"
+                        :delete-service="(id: string) => departmentStore.deleteDepartment(Number(id))"
                     />
                 </template>
             </AppTable>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import '@vueup/vue-quill/dist/vue-quill.snow.css'
 import { useI18n } from 'vue-i18n'
 interface TairoConfig {
     title?: string

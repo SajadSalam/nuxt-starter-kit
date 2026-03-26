@@ -20,7 +20,7 @@ export type Department = {
   contactPhone?: string | null
 }
 
-export type DepartmentDto = BaseDto & {
+export type DepartmentDto = Omit<BaseDto, 'id'> & {
   id: number
   name: string
   description?: string | null
@@ -42,7 +42,7 @@ export type DepartmentDto = BaseDto & {
 export type DepartmentCreateDto = Department
 
 export type DepartmentUpdateDto = Department & {
-  id: number
+  id: number | string
 }
 
 export type DepartmentFilters = BaseFilters & {

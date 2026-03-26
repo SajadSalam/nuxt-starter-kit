@@ -1,5 +1,5 @@
 import { AuthService } from '../service'
-import type { LoginBody, MeResponse, Token } from '../types'
+import type { LoginBody, MeResponse, Role, Token } from '../types'
 
 const authService = new AuthService()
 
@@ -97,7 +97,7 @@ export const useAuthStore = defineStore('auth-store', () => {
 
   const hasRole = (roleName: string) => {
     if (!userData.value || !userData.value.roles) return false
-    return userData.value.roles.some(role => role.name === roleName)
+    return userData.value.roles.some((role: Role) => role.name === roleName)
   }
 
   const logout = () => {

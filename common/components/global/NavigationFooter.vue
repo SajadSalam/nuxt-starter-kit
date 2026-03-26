@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
+import { defineProps } from 'vue';
 defineProps<{
   isOpen: boolean
 }>()
 
-const version = import.meta.env.VITE_TA3_VERSION
+const version = import.meta.env.VITE_APP_VERSION
 </script>
 
 <template>

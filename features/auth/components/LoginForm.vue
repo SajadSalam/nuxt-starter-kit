@@ -3,7 +3,7 @@ import AppInputField from '~/common/components/app-field/AppInputField.vue'
 import { requiredValidator } from '~/common/services/validation'
 import { Validator } from '~/common/services/validator'
 import { useAuthStore } from '../store/auth'
-import type { LoginBody, MeResponse } from '../types/index'
+import type { LoginBody } from '../types/index'
 
 const body = ref<LoginBody>({
   loginIdentifier: '',
@@ -29,22 +29,12 @@ const login = async () => {
     isLoading.value = true
     isError.value = false
     await authStore.login(body.value)
-
-    const userDataStr = localStorage.getItem('userData')
-    if (userDataStr) {
-      const userData = JSON.parse(userDataStr) as MeResponse
-      // Check roles array for navigation
-      const userRoles = userData.roles?.map((role: any) => role.name) || []
-        window.location.href = '/'
-
-    }
   } catch (error) {
     isError.value = true
   } finally {
     isLoading.value = false
   }
 }
-
 
 onMounted(() => {})
 </script>
@@ -56,8 +46,8 @@ onMounted(() => {})
         v-model="validator.validation.value.loginIdentifier.$model"
         :errors="validator.validation.value.loginIdentifier.$errors"
         rounded="lg"
-        placeholder="ادخل اسم المستخدم"
-        label="اسم المستخدم"
+        placeholder="Enter username"
+        label="Username"
         class="rounded-full"
       />
       <AppInputField
@@ -65,19 +55,18 @@ onMounted(() => {})
         :errors="validator.validation.value.password.$errors"
         type="password"
         rounded="lg"
-        placeholder="ادخل كلمة المرور"
-        label="كلمة المرور"
+        placeholder="Enter password"
+        label="Password"
         class="rounded-full"
       />
 
-
       <p v-if="isError" class="text-red text-sm">
-        اسم المستخدم أو كلمة المرور غير صحيحة
+        Invalid username or password
       </p>
 
       <div class="flex w-full flex-col items-center gap-3">
         <BaseButton :loading="isLoading" type="submit" class="w-full" color="primary">
-          تسجيل الدخول
+          Login
         </BaseButton>
       </div>
     </div>

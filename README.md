@@ -208,7 +208,7 @@ Copy `.env.example` to `.env` and fill in the values:
 | Variable           | Description                                 | Example                              |
 | ------------------ | ------------------------------------------- | ------------------------------------ |
 | `VITE_BASE_URL`    | Base URL of the backend REST API            | `https://api.example.com/`           |
-| `VITE_TA3_VERSION` | Application version string                  | `0.1.0`                              |
+| `VITE_APP_VERSION` | Application version string                  | `0.1.0`                              |
 
 ---
 

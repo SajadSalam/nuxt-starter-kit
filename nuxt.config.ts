@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
     ssr: false,
     srcDir: '.',
-   
+
     extends: [
         './common/layers/tairo-layout-collapse',
         './common/layers/tairo',
@@ -23,8 +23,8 @@ export default defineNuxtConfig({
 
     devtools: { enabled: true },
     pages: true,
-    
-    
+
+
     // Configure Nitro for static generation
     nitro: {
         preset: 'static',
@@ -36,8 +36,7 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        '@pinia/nuxt',
-        '@vueuse/motion/nuxt'
+        '@pinia/nuxt'
     ],
     pinia: {
         storesDirs: ['./stores/**', './common/components/**/stores', './features/**/store'],
@@ -115,8 +114,8 @@ export default defineNuxtConfig({
         head: {
             viewport: 'width=device-width,initial-scale=1',
             link: [
-                { rel: 'icon', href: '/logo.svg', sizes: 'any' },
-                { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
+                { rel: 'icon', href: '/logo.png', sizes: 'any' },
+                { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' },
                 { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
@@ -124,6 +123,6 @@ export default defineNuxtConfig({
             ],
         }
     },
-    
+
     compatibilityDate: '2025-01-01',
 })

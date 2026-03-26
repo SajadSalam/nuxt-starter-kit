@@ -24,11 +24,11 @@ const validator = new Validator<DepartmentCreateDto>(
   },
   {
     name: {
-      required: requiredValidator('اسم القسم'),
+      required: requiredValidator('Department Name'),
     },
     code: {
-      required: requiredValidator('رمز القسم'),
-      capitalLetter: capitalLetterValidator('رمز القسم'),
+      required: requiredValidator('Department Code'),
+      capitalLetter: capitalLetterValidator('Department Code'),
     },
   }
 )
@@ -75,7 +75,7 @@ watch(
 <template>
   <AppDialog
     v-model="departmentStore.isCreateDialogOpen"
-    title="إنشاء قسم"
+    title="Create Department"
     size="xl"
     overflow-y="visible"
   >
@@ -86,14 +86,14 @@ watch(
             v-model="body.name.$model"
             :errors="body.name.$errors"
             size="md"
-            label="اسم القسم"
+            label="Department Name"
             required
           />
           <AppInputField
             v-model="body.code.$model"
             :errors="body.code.$errors"
             size="md"
-            label="رمز القسم"
+            label="Department Code"
             required
           />
         </div>
@@ -102,7 +102,7 @@ watch(
           v-model="body.description.$model"
           :errors="body.description.$errors"
           size="md"
-          label="الوصف"
+          label="Description"
           rows="3"
         />
 
@@ -113,7 +113,7 @@ watch(
             search-key="fullName"
             :errors="body.managerId.$errors"
             size="md"
-            label="المدير"
+            label="Manager"
             get-url="/user"
             item-label="fullName"
             item-value="id"
@@ -124,7 +124,7 @@ watch(
             search-key="name"
             :errors="body.parentDepartmentId.$errors"
             size="md"
-            label="القسم الأب"
+            label="Parent Department"
             get-url="/Department"
             item-label="name"
             item-value="id"
@@ -136,7 +136,7 @@ watch(
             v-model="body.budget.$model"
             :errors="body.budget.$errors"
             size="md"
-            label="الميزانية"
+            label="Budget"
             type="number"
             step="0.01"
             min="0"
@@ -145,7 +145,7 @@ watch(
             v-model="body.location.$model"
             :errors="body.location.$errors"
             size="md"
-            label="الموقع"
+            label="Location"
           />
         </div>
 
@@ -154,14 +154,14 @@ watch(
             v-model="body.contactEmail.$model"
             :errors="body.contactEmail.$errors"
             size="md"
-            label="البريد الإلكتروني للتواصل"
+            label="Contact Email"
             type="email"
           />
           <AppInputField
             v-model="body.contactPhone.$model"
             :errors="body.contactPhone.$errors"
             size="md"
-            label="هاتف التواصل"
+            label="Contact Phone"
             type="tel"
           />
         </div>
@@ -170,7 +170,7 @@ watch(
     <template #actions>
       <BaseButton color="primary" class="gap-1" :loading="isLoading" @click="createDepartment">
         <Icon name="ph:upload-simple-duotone" class="size-5" />
-        إنشاء قسم جديد
+        Create New Department
       </BaseButton>
     </template>
   </AppDialog>

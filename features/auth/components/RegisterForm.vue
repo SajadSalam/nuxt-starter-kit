@@ -20,17 +20,17 @@ const body = ref<RegisterBody>({
 
 const validator = new Validator<RegisterBody>(body.value, {
   phoneNumber: {
-    required: requiredValidator('رقم الهاتف'),
-    phoneNumber: mobileValidator('رقم الهاتف'),
+    required: requiredValidator('Phone Number'),
+    phoneNumber: mobileValidator('Phone Number'),
   },
   fullName: {
-    required: requiredValidator('الاسم الكامل'),
-    phoneNumber: alphaNumValidator('الاسم الكامل'),
-    minLength: minLengthValidator('الاسم الكامل', 2),
+    required: requiredValidator('Full Name'),
+    phoneNumber: alphaNumValidator('Full Name'),
+    minLength: minLengthValidator('Full Name', 2),
   },
   password: {
-    required: requiredValidator('كلمة المرور'),
-    minLength: minLengthValidator('كلمة المرور', 6),
+    required: requiredValidator('Password'),
+    minLength: minLengthValidator('Password', 6),
   },
 })
 const authStore = useAuthStore()
@@ -54,7 +54,7 @@ const register = async () => {
     :errors="validator.validation.value.fullName.$errors"
     icon="ph:user-duotone"
     rounded="lg"
-    label="الاسم الكامل"
+    label="Full Name"
     class="rounded-full"
   />
   <AppInputField
@@ -62,7 +62,7 @@ const register = async () => {
     :errors="validator.validation.value.phoneNumber.$errors"
     icon="ph:user"
     rounded="lg"
-    label="رقم الهاتف"
+    label="Phone Number"
     class="rounded-full"
   />
   <AppInputField
@@ -71,7 +71,7 @@ const register = async () => {
     icon="ph:lock"
     type="password"
     rounded="lg"
-    label="كلمة السر"
+    label="Password"
     class="rounded-full"
   />
   <BaseButton
@@ -80,7 +80,7 @@ const register = async () => {
     class="mt-4 w-full"
     color="primary"
     @click="register"
-    >تسجيل</BaseButton
+    >Register</BaseButton
   >
 </template>
 
