@@ -61,7 +61,7 @@ const endMenuItems = computed(
             :to="item.to"
             :data-nui-tooltip="isOpen ? undefined : item.name"
             data-nui-tooltip-position="end"
-            exact-active-class="!bg-primary-500/20 !text-primary-400"
+            exact-active-class="!bg-primary-500 !text-primary-100"
             class="nui-focus text-muted-400 hover:bg-muted-700/60 hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
             :class="!isOpen ? 'px-1 justify-center' : 'px-4'"
           >

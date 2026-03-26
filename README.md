@@ -2,6 +2,9 @@
 
 A production-ready admin panel starter kit built with Nuxt 3, TypeScript, and the Tairo UI kit. Designed for feature-based, scalable enterprise admin applications with full Arabic/English i18n support.
 
+> **Starting a new client project?**
+> Fill in [`SETUP_PROMPT.md`](./SETUP_PROMPT.md) with the client's details — app name, logo, brand colors, font, API URL, navigation, and features — then hand it to an LLM to apply all changes automatically.
+
 ---
 
 ## Table of Contents

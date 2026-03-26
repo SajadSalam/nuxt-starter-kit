@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue';
-defineProps<{
-  isOpen: boolean
+const props =  defineProps<{
+  color?: "white" | "black"
 }>()
+
+const color = props.color || "white"
 </script>
 
 <template>
