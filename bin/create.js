@@ -70,10 +70,15 @@ async function main() {
   console.log()
 
   // Copy template, skip heavy/generated dirs
-  const SKIP = ['node_modules', '.nuxt', '.output', 'bin']
-  fs.cpSync(path.join(__dirname, '../'), targetDir, {
+  const SKIP = new Set(['node_modules', '.nuxt', '.output', 'bin'])
+  const srcRoot = path.resolve(__dirname, '..')
+  fs.cpSync(srcRoot, targetDir, {
     recursive: true,
-    filter: src => !SKIP.some(s => src.replace(/\\/g, '/').includes(`/${s}`)),
+    filter: src => {
+      if (src === srcRoot) return true
+      const rel = path.relative(srcRoot, src)
+      return !SKIP.has(rel.split(/[\\/]/)[0])
+    },
   })
 
   // Patch package.json name
