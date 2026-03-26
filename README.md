@@ -1,4 +1,4 @@
-# Admin Vue — Nuxt 3 Admin Starter Kit
+# Admin Vue — Nuxt 4 Admin Starter Kit
 
 A production-ready admin panel starter kit built with Nuxt 3, TypeScript, and the Tairo UI kit. Designed for feature-based, scalable enterprise admin applications with full Arabic/English i18n support.
 
