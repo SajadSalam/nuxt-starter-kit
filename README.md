@@ -1,6 +1,6 @@
 # Admin Vue — Nuxt 4 Admin Starter Kit
 
-A production-ready admin panel starter kit built with Nuxt 3, TypeScript, and the Tairo UI kit. Designed for feature-based, scalable enterprise admin applications with full Arabic/English i18n support.
+A production-ready admin panel starter kit built with Nuxt 4, TypeScript, and the Tairo UI kit. Designed for feature-based, scalable enterprise admin applications with full Arabic/English i18n support.
 
 > **Starting a new client project?**
 > Fill in [`SETUP_PROMPT.md`](./SETUP_PROMPT.md) with the client's details — app name, logo, brand colors, font, API URL, navigation, and features — then hand it to an LLM to apply all changes automatically.
@@ -23,7 +23,7 @@ A production-ready admin panel starter kit built with Nuxt 3, TypeScript, and th
 
 | Concern          | Technology                                          |
 | ---------------- | --------------------------------------------------- |
-| Framework        | [Nuxt 3](https://nuxt.com) — SPA mode (`ssr: false`) |
+| Framework        | [Nuxt 4](https://nuxt.com) — SPA mode (`ssr: false`) |
 | Language         | TypeScript + Vue 3 `<script setup>`                 |
 | State Management | [Pinia](https://pinia.vuejs.org) (setup-store style) |
 | HTTP Client      | [Axios](https://axios-http.com) — shared instance with interceptors |
